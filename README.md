@@ -2,7 +2,7 @@ This bundle is the wrapper for Symfony and is able to work as http-cache
 
 ### Usage
 
-1. Update your `app/AppKernel.php`
+Update your `app/AppKernel.php`
 ```
 public function registerBundles()
      {
@@ -14,7 +14,7 @@ public function registerBundles()
      }
 ```
 
-2. Update your `composer.json`
+Update your `composer.json`
 ```
 {
   "require": {
@@ -23,7 +23,7 @@ public function registerBundles()
   },
 ```
 
-3. Ensure, that your `app.php` looks like:
+Ensure, that your `app.php` looks like:
 ```
 require_once __DIR__.'/../app/AppKernel.php';
 require_once __DIR__.'/../app/AppCache.php';
@@ -33,7 +33,7 @@ $kernel->loadClassCache();
 $kernel = new AppCache($kernel);
 ```
 
-4. Extend your `AppCache` class in app/AppCache.php
+Extend your `AppCache` class in app/AppCache.php
 ```
 <?php
 
@@ -46,7 +46,7 @@ class AppCache extends RedisCache
 }
 ```
 
-5. Update your `config.yml`
+Update your `config.yml`
 ```
 snc_redis:
   clients:
@@ -56,10 +56,10 @@ snc_redis:
       dsn: %redis_dsn%
 ```
 
-6. Updated your `parameters.yml`
+Updated your `parameters.yml`
 ```
     redis_dsn: redis://yourredisserver
     redis_prefix: prefix
 ```
 
-7. Run `composer install`
+Run `composer install`
