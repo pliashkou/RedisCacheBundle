@@ -1,4 +1,4 @@
-This bundle is the wrapper for Symfony and is able to work as http-cache
+This bundle is the wrapper for Symfony and is able to work as http cache or as service.
 
 ### Usage
 
@@ -63,6 +63,15 @@ Updated your `parameters.yml`
 ```
 
 Run `composer install`
+
+Update your `services.yml`
+```yml
+acme.redis_wrapper.class: CacheBundle\\Client\\RedisClient
+
+acme.redis:
+        class: %acme.redis_wrapper.class%
+        arguments: ['@service_container']
+```
 
 License
 ----
